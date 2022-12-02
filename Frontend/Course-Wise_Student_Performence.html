@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Course-Wise Student Performence</title>
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
+
+    <style>
+        .CheckSize {
+          height: 20px;
+          width: 25px;
+        }
+    </style>
+
+</head>
+
+<body style="background-color: rgb(174, 215, 195);">
+<!-- Image and text navbar -->
+<nav class="navbar navbar-light bg-light">
+	<a class="navbar-brand" href="#">
+	  <img src="F:/aiman_project/HI.png" width="35" height="35" class="d-inline-block align-top" alt="" loading="lazy">
+	  <b style="font-family: 'Courier New', Courier, monospace;" class="text-info">SPMS</b> 
+	</a>
+	<button type="button" class="btn btn-sm btn-info float-right">Logout</button>
+</nav>
+
+<div class="container mt-3">
+    <div class="row">
+        
+        <div class="col-sm-12">   
+            <h2 class="text-center text-capitalize text-info">Course-Wise Student Performence</h2>
+        </div>
+                    <!--checkbox1-->
+        <div class="col-sm-3">
+
+
+            <label for="" class="font-weight-bold mt-3" >Department</label> <br>
+            <div class="form-check form-check-inline">
+              <input class="form-check-input CheckSize" type="checkbox" id="" value="" checked="checked">
+              <label class="form-check-label">CSE</label>
+            </div>
+            <div class="form-check form-check-inline">
+              <input class="form-check-input CheckSize" type="checkbox" id="" value="" >
+              <label class="form-check-label" >EEE</label>
+            </div>
+            <div class="form-check form-check-inline">
+              <input class="form-check-input CheckSize" type="checkbox" id="" value="" >
+              <label class="form-check-label">PS</label>
+            </div>
+            <br>
+
+            <label for="" class="font-weight-bold mt-3" >Program</label> <br>
+            <div class="form-check form-check-inline">
+              <input class="form-check-input CheckSize" type="checkbox" id="" value="" >
+              <label class="form-check-label">CEN</label>
+            </div>
+            <div class="form-check form-check-inline">
+              <input class="form-check-input CheckSize" type="checkbox" id="" value="" >
+              <label class="form-check-label" >CSC</label>
+            </div>
+            <div class="form-check form-check-inline">
+              <input class="form-check-input CheckSize" type="checkbox" id="" value="" checked="checked">
+              <label class="form-check-label">CSE</label>
+            </div>
+            <div class="form-check form-check-inline">
+                <input class="form-check-input CheckSize" type="checkbox" id="" value="" >
+                <label class="form-check-label">SCN</label>
+            </div>
+            <div class="form-check form-check-inline">
+                <input class="form-check-input CheckSize" type="checkbox" id="" value="" >
+                <label class="form-check-label">CNC</label>
+            </div>
+            <br>
+
+            <label for="" class="font-weight-bold mt-3" >Course</label> <br>
+            <div class="form-check form-check-inline">
+              <input class="form-check-input CheckSize" type="checkbox" id="" value="" >
+              <label class="form-check-label">CSE303</label>
+            </div>
+            <div class="form-check form-check-inline">
+              <input class="form-check-input CheckSize" type="checkbox" id="" value="" >
+              <label class="form-check-label" >CSE216</label>
+            </div>
+            <div class="form-check form-check-inline">
+              <input class="form-check-input CheckSize" type="checkbox" id="" value="" checked="checked">
+              <label class="form-check-label">CSE217</label>
+            </div>
+            <div class="form-check form-check-inline">
+                <input class="form-check-input CheckSize" type="checkbox" id="" value="" >
+                <label class="form-check-label">CSE210</label>
+            </div>
+            <div class="form-check form-check-inline">
+                <input class="form-check-input CheckSize" type="checkbox" id="" value="" >
+                <label class="form-check-label">CNC</label>
+            </div>
+            <br>
+
+            <div class="form-group">
+                <label for="exampleInputPassword1" class="font-weight-bold">Faculty ID</label>
+                <input type="number" class="form-control" id="exampleInputPassword1">
+            </div>
+
+
+            <a href=""><button type="submit" class="btn  btn-secondary mt-3">View</button></a>
+        </div>
+
+
+
+
+        <div class="col-sm-8"> 
+            <canvas id="myChart" width="800px" height="600px"></canvas>
+        </div>
+
+    </div>
+</div>
+
+
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" crossorigin="anonymous">
+</script>
+
+<!--for chart-->
+<script src="https://cdn.jsdelivr.net/npm/chart.js@3.7.1/dist/chart.min.js" ></script>
+<script>
+    const ctx = document.getElementById('myChart').getContext('2d');
+    const myChart = new Chart(ctx, {
+        type: 'line',
+        data: {
+            labels: ['Spr21', 'Spr21', 'Aut21', 'Spr22', 'Sum22', 'Aut22'],
+            datasets: [{
+                label: '# of Votes',
+                data: [2.8, 1.5, 3.2, 2, 3, 2.5, 3.5],
+                backgroundColor: [
+                    'rgba(255, 99, 132, 0.2)',
+                    'rgba(54, 162, 235, 0.2)',
+                    'rgba(255, 206, 86, 0.2)',
+                    'rgba(75, 192, 192, 0.2)',
+                    'rgba(153, 102, 255, 0.2)',
+                    'rgba(255, 159, 64, 0.2)'
+                ],
+                borderColor: [
+                    'rgba(255, 99, 132, 1)',
+                    'rgba(54, 162, 235, 1)',
+                    'rgba(255, 206, 86, 1)',
+                    'rgba(75, 192, 192, 1)',
+                    'rgba(153, 102, 255, 1)',
+                    'rgba(255, 159, 64, 1)'
+                ],
+                borderWidth: 1
+            }]
+        },
+        options: {
+            scales: {
+                y: {
+                    beginAtZero: true
+                }
+            }
+        }
+    });
+    </script>
+<!--end-->
+</body>
+</html>
